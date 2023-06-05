@@ -1,6 +1,4 @@
 #!/usr/bin/python3
 str = "Holberton School"
-print(str * 3, '\n')
-# Line Filler
-# Extra Line
-print(str[:9], '\n')
+print(str * 3 + '\n')
+print(str[:9] + '\n')
