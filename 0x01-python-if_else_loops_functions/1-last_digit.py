@@ -9,11 +9,11 @@ if number < 0:
 
 if lastNumber > 5:
     print("Last digit of {} is {} and is greater than 5"
-    .format((number), (lastNumber)))
+        .format((number), (lastNumber)))
 elif lastNumber == 0:
     print("Last digit of {} is {} and is 0"
-    .format((number), (lastNumber)))
+        .format((number), (lastNumber)))
 elif lastNumber < 6 and lastNumber != 0:
     print("Last digit of {} is {} "
-    "and is less than 6 and not 0".format((number), (lastNumber)))
+        "and is less than 6 and not 0".format((number), (lastNumber)))
 
