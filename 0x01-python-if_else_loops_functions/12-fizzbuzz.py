@@ -8,5 +8,5 @@ def fizzbuzz():
             print("Fizz", end=" ")
         elif index % 5 == 0:
             print("Buzz", end=" ")
-        else: 
+        else:
             print("{:d}".format(index), end=" ")
