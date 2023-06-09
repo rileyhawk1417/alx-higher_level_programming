@@ -8,7 +8,7 @@ if __name__ == "__main__":
     if argCount == 0:
         print("0 arguments.")
     elif argCount == 1:
-        print("{} arguments.".format((argCount)))
+        print("{} argument:".format((argCount)))
     else:
         print("{} arguments:".format(argCount))
 
