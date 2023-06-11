@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 
-import hidden_4
 
-hiddenNames = dir(hidden_4)
-# BUG: This still fails why?
-print(hiddenNames)
-for findName in hiddenNames:
-    if findName[:2] != '__':
-        print(findName)
+if __name__ == "__main__":
+    import importlib
+
+    importedModule = importlib.import_module("hidden_4")
+    names = dir(importedModule)
+    name_list = [name for name in names if not name.startswith("__")]
+    sorted_list = sorted(name_list)
+    for name in sorted_list:
+        print(name)
