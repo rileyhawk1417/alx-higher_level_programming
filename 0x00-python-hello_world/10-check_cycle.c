@@ -14,7 +14,7 @@ listint_t *fasterNode = list;
 listint_t *normalNode = list;
 if (list == NULL)
 	return (0);
-while (normalNode != NULL && fasterNode->next)
+while (normalNode != NULL && fasterNode != NULL && fasterNode->next)
 {
 normalNode = normalNode->next;
 fasterNode = fasterNode->next->next;
