@@ -18,6 +18,8 @@ newNode = malloc(sizeof(listint_t));
 
 if (!newNode)
 	return (NULL);
+
+newNode->n = number;
 /*NOTE:If number is negative & less than the current number */
 if (currentNode == NULL || currentNode->n >= number)
 {
@@ -30,7 +32,6 @@ return (newNode);
 while (currentNode && currentNode->next && currentNode->next->n < number)
 	currentNode = currentNode->next;
 
-newNode->n = number;
 newNode->next = currentNode->next;
 currentNode->next = newNode;
 
