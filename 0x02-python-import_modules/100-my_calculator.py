@@ -21,5 +21,7 @@ if __name__ == "__main__":
     if len(sys.argv) - 1 != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
-    print("{} {} {}".format(sys.argv[1], sys.argv[2], sys.argv[3]), end="")
-    print(" = {}".format(ops(sys.argv[2])))
+    a = sys.argv[1]
+    operator = sys.argv[2]
+    b = sys.argv[3]
+    print("{} {} {} = {}".format(a, sys.argv[2], b, ops(operator)))
