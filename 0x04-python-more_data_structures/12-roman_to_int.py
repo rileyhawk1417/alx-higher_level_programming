@@ -1,13 +1,12 @@
 #!/usr/bin/python3
-
-
-def subtract_num(roman_list):
-    subtract = 0
-    list_max = max(roman_list)
-    for num in roman_list:
-        if list_max > num:
-            subtract += num
-    return list_max - subtract
+"""
+NOTE: Well in order to get this right
+Count the letters from the right. <-
+For example "IV"  V is 5 & I is 1
+Since the "I" is before the "V" we subtract
+giving us 4. However if the I were after V
+it would give us 6
+"""
 
 
 def roman_to_int(roman_string):
@@ -16,22 +15,18 @@ def roman_to_int(roman_string):
     if not isinstance(roman_string, str):
         return 0
 
-    romans = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
-    fetch_roman_keys = list(romans.keys())
-    num = 0
-    last_roman_num = 0
-    list_roman_num = [0]
+    _dict = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
 
-    for char in roman_string:
-        for roman_num in fetch_roman_keys:
-            if roman_num == char:
-                if romans.get(char) <= last_roman_num:
-                    num += subtract_num(list_roman_num)
-                    list_roman_num = [romans.get(char)]
-                else:
-                    list_roman_num.append(romans.get(char))
-
-                last_roman_num = romans.get(char)
-        num += subtract_num(list_roman_num)
-
-    return num
+    string_len = len(roman_string)
+    index = string_len - 1
+    result = 0
+    while index >= 0:
+        if (
+            index < string_len - 1
+            and _dict[roman_string[index]] < _dict[roman_string[index + 1]]
+        ):
+            result -= _dict[roman_string[index]]
+        else:
+            result += _dict[roman_string[index]]
+        index -= 1
+    return result
