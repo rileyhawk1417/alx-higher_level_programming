@@ -2,6 +2,14 @@
 
 
 def list_division(my_list_1, my_list_2, list_length):
+    """Divide the two list elements individually
+    Args:
+        my_list_1 (list): The first list
+        my_list_2 (list): The second list
+        list_length (int): The list length
+    Returns:
+        A new list containing all the divisions
+    """
     result = 0
     new_list = []
     for items in range(0, list_length):
