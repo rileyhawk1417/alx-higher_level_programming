@@ -69,15 +69,15 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             print("")
             return
-        rectangle = []
+        rect = []
         # NOTE: Best to use a dictionary to catch sorted results
         # NOTE: Then print after
         for h in range(self.__height):
-            [rectangle.append(str(self.print_symbol)) for w in range(self.__width)]
+            [rect.append(str(self.print_symbol)) for w in range(self.__width)]
             if h != self.__height - 1:
-                rectangle.append("\n")
+                rect.append("\n")
 
-        return "".join(rectangle)
+        return "".join(rect)
 
     def __repr__(self):
         """Returns a string representation in developer friendly format"""
