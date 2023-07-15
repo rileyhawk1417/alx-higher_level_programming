@@ -6,5 +6,47 @@ Using ``add_integer``
 
 ``add_integer`` from ``0-add-integer`` module:
     >>> add_integer = __import__('0-add_integer').add_integer
-    >>> add_integer(1, 3)
-    4
+
+    >>> add_integer(5, 5)
+    10
+
+    >>> add_integer(2.4, 6.2)
+    8
+
+    >>> add_integer(-2.2, 3.3)
+    1
+
+    >>> add_integer(0, 0)
+    0
+
+    >>> add_integer(-2)
+    96
+
+    >> add_integer()
+    Traceback (most recent call last):
+        ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+    
+    >>> add_integer(0)
+    98
+
+    >>> add_integer(1, "jdm")
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+    >>> add_integer("cars", 4)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
+
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
