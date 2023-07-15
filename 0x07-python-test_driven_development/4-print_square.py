@@ -3,6 +3,7 @@
 
 
 def print_square(size):
+    """The function prints a square using the '#' using the size value"""
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
     if size < 0:
