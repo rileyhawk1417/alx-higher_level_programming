@@ -5,7 +5,7 @@ Python script that appends items to a file if exists.
 If it doesn't exist then it will create the file
 """
 
-import os
+import os.path
 import sys
 
 save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
