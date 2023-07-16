@@ -16,8 +16,6 @@ input_list = []
 
 if os.path.exists(fileName):
     input_list = load_from_json_file(fileName)
-    input_list.append("clicky")
-    print(input_list)
 
 for idx in range(1, len(sys.argv)):
     input_list.append(sys.argv[idx])

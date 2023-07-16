@@ -9,4 +9,4 @@ def write_file(filename="", text=""):
         text (str): the text to write in a file
     """
     with open(filename, "w", encoding="utf-8") as file:
-        print(file.write(text))
+        return file.write(text)
