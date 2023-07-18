@@ -117,6 +117,15 @@ Test a dict argument to integer_validator
         ...
   TypeError: age must be an integer
 
+Test a dict argument to integer_validator
+::
+
+  >>> b_geometry = BaseGeometry()
+  >>> b_geometry.integer_validator("name", True)
+  Traceback (most recent call last):
+        ...
+  TypeError: name must be an integer
+
 Test None to integer_validator
 ::
 
