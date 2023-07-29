@@ -57,8 +57,7 @@ class Rectangle:
     def __str__(self):
         """Returns a string representation in human friendly format"""
         if self.__width == 0 or self.__height == 0:
-            print("")
-            return
+            return ""
         rectangle = []
         # NOTE: Best to use a dictionary to catch sorted results
         # NOTE: Then print after
@@ -66,5 +65,4 @@ class Rectangle:
             [rectangle.append("#") for w in range(self.__width)]
             if h != self.__height - 1:
                 rectangle.append("\n")
-
         return "".join(rectangle)
