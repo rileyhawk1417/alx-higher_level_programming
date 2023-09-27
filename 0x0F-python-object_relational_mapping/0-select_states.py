@@ -3,13 +3,13 @@
 import MySQLdb
 import sys
 
-if __name__ == "__main__":
+def get_states(user, passwd, db):
     try:
         sql_db = MySQLdb.connect(
             host='localhost',
-            user=sys.argv[1],
-            passwd=sys.argv[2],
-            db=sys.argv[3],
+            user=user,
+            passwd=passwd,
+            db=db,
             port=3306
         )
         selector = sql_db.cursor()
@@ -29,3 +29,13 @@ if __name__ == "__main__":
     finally:
         selector.close()
         sql_db.close()
+
+if __name__ == "__main__":
+    if len(sys.argv) != 4:
+        print("Usage: python script.py <mysql_username> <mysql_password> <database_name>")
+    else:
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3],
+        get_states(user, passwd, db)
+
