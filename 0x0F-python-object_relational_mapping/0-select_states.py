@@ -4,19 +4,28 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    sql_db = MySQLdb.connect(
-        host='localhost',
-        user=sys.argv[1],
-        passwd=sys.argv[2],
-        db=sys.argv[3],
-        port=3306
-    )
+    try:
+        sql_db = MySQLdb.connect(
+            host='localhost',
+            user=sys.argv[1],
+            passwd=sys.argv[2],
+            db=sys.argv[3],
+            port=3306
+        )
+        selector = sql_db.cursor()
+    except MySQLdb.Error as e:
+        print("Error: Unable to connect to MySQL server.")
+        print("MySQL ERROR {}: {}".format(e.args[0], e.args[1]))
 
-    selector=sql_db.cursor()
-    selector.execute("SELECT * FROM states")
-    sql_table=selector.fetchall()
+    try:
+        selector.execute("SELECT * FROM states")
+        sql_table = selector.fetchall()
+        for rows in sql_table:
+            print(rows)
 
-    for rows in sql_table:
-        print(rows)
-    selector.close()
-    sql_db.close()
+    except MySQLdb.Error as e:
+        print("MySQL ERROR {}: {}".format(e.args[0], e.args[1]))
+
+    finally:
+        selector.close()
+        sql_db.close()
