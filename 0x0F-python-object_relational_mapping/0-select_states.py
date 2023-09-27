@@ -12,9 +12,9 @@ if __name__ == "__main__":
         port=3306
     )
 
-    selector=sql_db.cursor()
+    selector = sql_db.cursor()
     selector.execute("SELECT * FROM states")
-    sql_table=selector.fetchall()
+    sql_table = selector.fetchall()
 
     for rows in sql_table:
         print(rows)
