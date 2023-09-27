@@ -14,7 +14,7 @@ if __name__ == "__main__":
     given_state_name = sys.argv[4]
 
     selector = sql_db.cursor()
-    query = "SELECT * FROM states WHERE name = (%s)\
+    query = "SELECT * FROM states WHERE name = {}\
     ORDER BY states.id ASC".format(given_state_name)
     selector.execute(query)
     sql_table = selector.fetchall()
