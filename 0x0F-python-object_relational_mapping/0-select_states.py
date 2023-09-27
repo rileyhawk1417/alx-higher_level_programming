@@ -3,7 +3,9 @@
 import MySQLdb
 import sys
 
+
 def get_states(user, passwd, db):
+    """Function that gets all the states"""
     try:
         sql_db = MySQLdb.connect(
             host='localhost',
@@ -30,12 +32,16 @@ def get_states(user, passwd, db):
         selector.close()
         sql_db.close()
 
-if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: python script.py <mysql_username> <mysql_password> <database_name>")
-    else:
-        user=sys.argv[1],
-        passwd=sys.argv[2],
-        db=sys.argv[3],
-        get_states(user, passwd, db)
 
+usage_msg = "Usage: python script.py <mysql_username>"
+usage_msg += " <mysql_password> <database_name>"
+
+if __name__ == "__main__":
+
+    if len(sys.argv) != 4:
+        print(usage_msg)
+    else:
+        user = sys.argv[1],
+        passwd = sys.argv[2],
+        db = sys.argv[3],
+        get_states(user, passwd, db)
