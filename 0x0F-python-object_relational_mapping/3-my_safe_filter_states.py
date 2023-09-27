@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     selector = sql_db.cursor()
     selector.execute("SELECT * FROM states WHERE name = (%s)\
-    ORDER BY states.id ASC", (given_state_name))
+    ORDER BY states.id ASC", (given_state_name,))
     sql_table = selector.fetchall()
 
     for rows in sql_table:
