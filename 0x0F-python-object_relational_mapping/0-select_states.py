@@ -4,14 +4,14 @@ import MySQLdb
 import sys
 
 
-def get_states(user, passwd, db):
+def get_states(user_name, pass_word, database):
     """Function that gets all the states"""
     try:
         sql_db = MySQLdb.connect(
             host='localhost',
-            user=user,
-            passwd=passwd,
-            db=db,
+            user=user_name,
+            passwd=pass_word,
+            db=database,
             port=3306
         )
         selector = sql_db.cursor()
