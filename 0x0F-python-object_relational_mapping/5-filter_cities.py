@@ -14,14 +14,18 @@ if __name__ == "__main__":
 
     given_state_name = sys.argv[4]
     selector = sql_db.cursor()
-    query = "SELECT cities.name, FROM cities \
+    selector.execute("SELECT cities.name FROM cities \
     LEFT JOIN states ON states.id = cities.state_id \
     WHERE states.name LIKE BINARY (%s) \
-    ORDER BY cities.id ASC".format(given_state_name)
-    selector.execute(query)
+    ORDER BY cities.id ASC", (given_state_name,))
     sql_table = selector.fetchall()
 
-    for rows in sql_table:
-        print(rows)
+    end_cities = ""
+    start_cities = ""
+
+    for row in sql_table:
+        start_cities = start_cities + end_cities + row[0]
+        end_cities = ", "
+    print(start_cities)
     selector.close()
     sql_db.close()
