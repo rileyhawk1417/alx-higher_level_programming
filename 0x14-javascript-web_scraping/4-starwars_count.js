@@ -10,7 +10,7 @@ req(`${apiEndpoint}`, function (err, res, body) {
     const reply = JSON.parse(body);
     reply.results.forEach((movie) => {
       movie.characters.forEach((character) => {
-        if (character.includes(18)) {
+        if (character.includes('18')) {
           count += 1;
         }
       });
