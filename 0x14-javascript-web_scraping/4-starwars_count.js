@@ -5,8 +5,9 @@ const apiEndpoint = 'https://swapi-api.alx-tools.com/api/films';
 let count = 0;
 
 req(`${apiEndpoint}`, function (err, res, body) {
-  if (err) throw err;
-  else {
+  if (err) {
+    console.log(err);
+  } else {
     const reply = JSON.parse(body);
     reply.results.forEach((movie) => {
       movie.characters.forEach((character) => {
