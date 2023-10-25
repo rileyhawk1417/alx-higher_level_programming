@@ -1,10 +1,10 @@
 #!/usr/bin/node
 /* Fetch an API endpoint then return number of times a character appeared */
 const req = require('request');
-const apiEndpoint = 'https://swapi-api.alx-tools.com/api/films';
+let args = process.argv;
 let count = 0;
 
-req(`${apiEndpoint}`, function (err, res, body) {
+req(args[2], function (err, res, body) {
   if (err) {
     console.log(err);
   } else {
